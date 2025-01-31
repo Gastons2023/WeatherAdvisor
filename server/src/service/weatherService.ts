@@ -119,13 +119,14 @@ const currentWeather = new Weather(
   this.city,
   parseDate,
   response.weather[0].icon,
-  response.weather[0].description,
-  response.main.temp,
+  response.weather[0].description ||
+  response.weather[0].main,
+  // Convert temperature from Kelvin to Fahrenheit using the formula (K - 273.15) * 9/5 + 32 and rounding the temperature up to the nearest whole number
+  Math.ceil(((response.main.temp - 273.15) * 9) / 5 + 32),
   response.wind.speed,
-  response.main.humidity,
- 
-)
-return currentWeather
+  response.main.humidity
+);
+return currentWeather;
   }
   // TODO: Complete buildForecastArray method
   private buildForecastArray(currentWeather: Weather, weatherData: any[]) {
@@ -139,10 +140,11 @@ return currentWeather
         this.city,
         new Date(day.dt * 1000).toLocaleDateString(),
         day.weather[0].icon,
-        day.weather[0].description,
-        day.main.temp,
+        day.weather[0].description || day.weather[0].main,
+        // Convert temperature from Kelvin to Fahrenheit using the formula (K - 273.15) * 9/5 + 32 and rounding the temperature up to the nearest whole number
+        Math.ceil(((day.main.temp - 273.15) * 9) / 5 + 32),
         day.wind.speed,
-        day.main.humidity,
+        day.main.humidity
       )
     );
   }
