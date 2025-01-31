@@ -58,8 +58,8 @@ class HistoryService {
     return await this.getCities()
     .then((cities)=> cities.filter((city)=> city.
   id !== id))
-  .then((filteredCitities) =>this.write
-  (filteredCitities));
+  .then((filteredCities) =>this.write
+  (filteredCities));
   }
 }
 
