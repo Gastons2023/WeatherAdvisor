@@ -4,3 +4,6 @@ Application can be used to check the weather in multiple cities for event planni
 # Website Link
 https://weatheradvisor.onrender.com/
 
+# Features
+Website uses render to deploy application
+Website also uses vite
