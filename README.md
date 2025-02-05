@@ -7,3 +7,6 @@ https://weatheradvisor.onrender.com/
 # Features
 Website uses render to deploy application
 Website also uses vite
+
+# Screenshot 
+![alt text](<pictures/Screenshot 2025-02-05 182915.png>)
